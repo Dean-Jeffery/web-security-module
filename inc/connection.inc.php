@@ -1,12 +1,11 @@
 <?php
-// {
-//   $db = new mysqli('localhost','root','root','djeffery_web-security-practical');
-//   if (mysqli_connect_errno())
-//   {
-//     echo "Error: Could not connect to the database. Please try again later";
-//     exit;
-//   }
-// }
 
-$connection = mysqli_connect('localhost','root','root');
+$connection = mysqli_connect('localhost', 'djeffery', '2021509');
+if (!$connection) {
+    die("Database connection failed" . mysqli_error($connection));
+}
+$select_db = mysqli_select_db($connection, 'djeffery');
+if (!select_db) {
+  die ("Database selection failed" . mysqli_error($connection))
+}
 ?>
